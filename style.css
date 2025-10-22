@@ -1,0 +1,86 @@
+/* Navalha de Ouro - style.css */
+/* Paleta:
+   Dourado: #E19B00
+   Ouro Escuro: #B47400
+   Fundo Escuro: #1A1A1A
+   Cinza Neutro: #E0E0E0
+   Branco: #FFFFFF
+*/
+
+:root{
+  --dourado: #E19B00;
+  --dourado-escuro: #B47400;
+  --fundo: #1A1A1A;
+  --cinza: #E0E0E0;
+  --branco: #FFFFFF;
+  --max-width: 1100px;
+  --radius: 8px;
+  --transition: 200ms ease;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: var(--fundo);
+  color: var(--branco);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+.container{max-width:var(--max-width);margin:0 auto;padding:24px}
+
+/* Header */
+.site-header{background:var(--fundo);border-bottom:1px solid rgba(255,255,255,0.04)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--dourado)}
+.logo img{height:56px;width:56px;object-fit:contain}
+.brand{font-weight:700;font-size:18px;color:var(--dourado);letter-spacing:1px}
+.nav{display:flex;gap:16px;align-items:center}
+.nav a{color:var(--dourado);text-decoration:none;padding:8px}
+.nav .agendar{background:transparent;border:1px solid var(--dourado);padding:8px 12px;border-radius:6px}
+.nav-toggle{display:none;background:none;border:0;color:var(--dourado);font-size:24px}
+
+/* Hero */
+.hero{background:linear-gradient(90deg, rgba(225,155,0,0.06), rgba(180,116,0,0.04));padding:48px 0}
+.hero-inner{display:flex;gap:24px;align-items:center}
+.hero-text{flex:1}
+.hero-text h1{font-size:36px;margin:0 0 12px;color:var(--branco)}
+.hero-text p{color:var(--cinza);margin:0 0 18px}
+.botao-principal{display:inline-block;background:var(--dourado);color:var(--fundo);padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:600;transition:background var(--transition)}
+.botao-principal:hover{background:var(--dourado-escuro)}
+.botao-secundario{display:inline-block;border:1px solid rgba(255,255,255,0.08);color:var(--cinza);padding:10px 16px;border-radius:8px;text-decoration:none}
+
+/* Cards serviços */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:16px}
+.card-servico{background:rgba(255,255,255,0.03);padding:16px;border-radius:10px}
+.card-servico h3{margin:0 0 8px}
+.preco{display:block;margin-top:12px;font-weight:700;color:var(--dourado)}
+
+/* Sobre - equipe */
+.equipe-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:12px}
+.membro img{width:100%;height:180px;object-fit:cover;border-radius:8px}
+
+/* Footer */
+.site-footer{background:var(--fundo);border-top:1px solid rgba(255,255,255,0.04);margin-top:40px;padding:24px 0;color:var(--cinza)}
+.footer-inner{display:flex;gap:24px;flex-wrap:wrap}
+.footer-col{flex:1;min-width:180px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.03);padding:12px 0;margin-top:12px;text-align:center;color:rgba(255,255,255,0.6)}
+
+/* Forms */
+label{display:block;margin-bottom:12px;color:var(--cinza)}
+input[type=text],input[type=email],input[type=password],input[type=date],input[type=time],select,textarea{
+  width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:var(--branco)
+}
+button{cursor:pointer;border:0}
+
+/* Responsive */
+@media(max-width:900px){
+  .hero-inner{flex-direction:column}
+  .nav{display:none}
+  .nav-toggle{display:block}
+  .container{padding:16px}
+  .logo img{height:48px}
+}
